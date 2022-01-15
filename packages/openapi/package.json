@@ -7,7 +7,7 @@
     "build:openapi": "npx @airtasker/spot generate --contract v1/api.ts --language json --generator openapi3 --out build/api/v1/"
   },
   "keywords": [],
-  "author": "",
+  "author": "David Taing <adavidtaing@gmail.com>",
   "license": "ISC",
   "devDependencies": {
     "install": "^0.13.0",
