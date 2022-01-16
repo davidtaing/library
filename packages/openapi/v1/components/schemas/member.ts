@@ -15,7 +15,7 @@ export interface Member {
   };
 }
 
-export interface CreateMember {
+export interface PostMember {
   email: String;
   password: String;
   fullName: String;

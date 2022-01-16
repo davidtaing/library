@@ -285,13 +285,13 @@
         }
       },
       "post": {
-        "operationId": "AddMember",
+        "operationId": "CreateMember",
         "parameters": [],
         "requestBody": {
           "content": {
             "application/json": {
               "schema": {
-                "$ref": "#/components/schemas/AddMemberRequest"
+                "$ref": "#/components/schemas/CreateMemberRequest"
               }
             }
           },
@@ -377,7 +377,7 @@
           }
         }
       },
-      "put": {
+      "patch": {
         "operationId": "UpdateMember",
         "parameters": [
           {
@@ -801,8 +801,59 @@
           "address"
         ]
       },
-      "AddMemberRequest": {
-        "$ref": "#/components/schemas/Member"
+      "PostMember": {
+        "type": "object",
+        "properties": {
+          "email": {
+            "type": "string"
+          },
+          "password": {
+            "type": "string"
+          },
+          "fullName": {
+            "type": "string"
+          },
+          "preferredName": {
+            "type": "string"
+          },
+          "address": {
+            "type": "object",
+            "properties": {
+              "addressLn1": {
+                "type": "string"
+              },
+              "addressLn2": {
+                "type": "string"
+              },
+              "suburb": {
+                "type": "string"
+              },
+              "state": {
+                "type": "string"
+              },
+              "postcode": {
+                "type": "string"
+              }
+            },
+            "required": [
+              "addressLn1",
+              "addressLn2",
+              "suburb",
+              "state",
+              "postcode"
+            ]
+          }
+        },
+        "required": [
+          "email",
+          "password",
+          "fullName",
+          "preferredName",
+          "address"
+        ]
+      },
+      "CreateMemberRequest": {
+        "$ref": "#/components/schemas/PostMember"
       },
       "UpdateMemberRequest": {
         "$ref": "#/components/schemas/PartialMember"

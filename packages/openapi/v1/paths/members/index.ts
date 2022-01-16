@@ -9,7 +9,7 @@ import {
 import {
   Member,
   PartialMember,
-  CreateMember,
+  PostMember,
   Error,
 } from "../../components/schemas";
 
@@ -35,9 +35,9 @@ class GetMembers {
   method: "POST",
   path: "/members",
 })
-class AddMember {
+class CreateMember {
   @request
-  request(@body body: AddMemberRequest) {}
+  request(@body body: CreateMemberRequest) {}
 
   @response({ status: 200 })
   successResponse(@body body: Member) {}
@@ -68,7 +68,7 @@ class GetMemberById {
 }
 
 @endpoint({
-  method: "PUT",
+  method: "PATCH",
   path: "/members/:memberId",
 })
 class UpdateMember {
@@ -113,5 +113,5 @@ class DeleteMember {
 }
 
 type GetMembersRequest = PartialMember;
-type AddMemberRequest = Member;
+type CreateMemberRequest = PostMember;
 type UpdateMemberRequest = PartialMember;
