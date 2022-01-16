@@ -23,9 +23,9 @@ const DELETE: Operation = [
   },
 ];
 
-GET.apiDoc = paths["/members/:memberId"]?.get;
-PATCH.apiDoc = paths["/members/:memberId"]?.patch;
-DELETE.apiDoc = paths["/members/:memberId"]?.delete;
+GET.apiDoc = paths["/members/{memberId}"]?.get;
+PATCH.apiDoc = paths["/members/{memberId}"]?.patch;
+DELETE.apiDoc = paths["/members/{memberId}"]?.delete;
 
 const operations = () => ({ GET, PATCH, DELETE });
 

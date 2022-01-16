@@ -23,9 +23,9 @@ const DELETE: Operation = [
   },
 ];
 
-GET.apiDoc = paths["/books/:isbn10"]?.get;
-PATCH.apiDoc = paths["/books/:isbn10"]?.patch;
-DELETE.apiDoc = paths["/books/:isbn10"]?.delete;
+GET.apiDoc = paths["/books/{isbn10}"]?.get;
+PATCH.apiDoc = paths["/books/{isbn10}"]?.patch;
+DELETE.apiDoc = paths["/books/{isbn10}"]?.delete;
 
 const operations = () => ({ GET, PATCH, DELETE });
 
