@@ -73,10 +73,16 @@ class DeleteBook {
 
   @response({ status: 200 })
   successResponse(@body body: Book) {}
+
   @response({ status: 400 })
   BadRequestResponse(@body body: Error) {}
+
+  @response({ status: 401 })
+  UnauthorizedResponse(@body body: Error) {}
+
   @response({ status: 403 })
   ForbiddenResponse(@body body: Error) {}
+
   @response({ status: 500 })
   InternalServerErrorResponse(@body body: Error) {}
 }
