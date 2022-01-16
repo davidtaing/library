@@ -1,7 +1,7 @@
 import { String } from "@airtasker/spot";
 
 export interface Member {
-  id: String;
+  _id: String;
   email: String;
   password: String;
   fullName: String;
@@ -31,7 +31,7 @@ export interface PostMember {
 
 // @airtasker/spot does not support Partial<T>
 export interface PartialMember {
-  id: String;
+  _id: String;
   email?: String;
   password?: String;
   fullName?: String;

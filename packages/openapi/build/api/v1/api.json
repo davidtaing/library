@@ -703,7 +703,7 @@
       "PartialMember": {
         "type": "object",
         "properties": {
-          "id": {
+          "_id": {
             "type": "string"
           },
           "email": {
@@ -740,7 +740,7 @@
           }
         },
         "required": [
-          "id"
+          "_id"
         ]
       },
       "GetMembersRequest": {
@@ -749,7 +749,7 @@
       "Member": {
         "type": "object",
         "properties": {
-          "id": {
+          "_id": {
             "type": "string"
           },
           "email": {
@@ -793,7 +793,7 @@
           }
         },
         "required": [
-          "id",
+          "_id",
           "email",
           "password",
           "fullName",
