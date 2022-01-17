@@ -45,6 +45,25 @@ class AddBook {
 }
 
 @endpoint({
+  method: "GET",
+  path: "/books/:isbn10",
+  tags: ["Books"],
+})
+class GetBookByIsbn {
+  @request
+  request(@pathParams pathParams: { isbn10: String }) {}
+
+  @response({ status: 200 })
+  successResponse(@body body: Book) {}
+
+  @response({ status: 400 })
+  BadRequestResponse(@body body: Error) {}
+
+  @response({ status: 500 })
+  InternalServerErrorResponse(@body body: Error) {}
+}
+
+@endpoint({
   method: "PATCH",
   path: "/books/:isbn10",
   tags: ["Books"],
@@ -58,10 +77,13 @@ class UpdateBook {
 
   @response({ status: 200 })
   successResponse(@body body: Book) {}
+
   @response({ status: 400 })
   BadRequestResponse(@body body: Error) {}
+
   @response({ status: 403 })
   ForbiddenResponse(@body body: Error) {}
+
   @response({ status: 500 })
   InternalServerErrorResponse(@body body: Error) {}
 }
