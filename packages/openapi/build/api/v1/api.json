@@ -7,6 +7,9 @@
   "paths": {
     "/books": {
       "get": {
+        "tags": [
+          "Books"
+        ],
         "operationId": "GetBooks",
         "parameters": [],
         "requestBody": {
@@ -56,6 +59,9 @@
         }
       },
       "post": {
+        "tags": [
+          "Books"
+        ],
         "operationId": "AddBook",
         "parameters": [],
         "requestBody": {
@@ -114,6 +120,9 @@
     },
     "/books/{isbn10}": {
       "patch": {
+        "tags": [
+          "Books"
+        ],
         "operationId": "UpdateBook",
         "parameters": [
           {
@@ -179,6 +188,9 @@
         }
       },
       "delete": {
+        "tags": [
+          "Books"
+        ],
         "operationId": "DeleteBook",
         "parameters": [
           {
@@ -246,6 +258,9 @@
     },
     "/members": {
       "get": {
+        "tags": [
+          "Members"
+        ],
         "operationId": "GetMembers",
         "parameters": [],
         "requestBody": {
@@ -295,6 +310,9 @@
         }
       },
       "post": {
+        "tags": [
+          "Members"
+        ],
         "operationId": "CreateMember",
         "parameters": [],
         "requestBody": {
@@ -343,6 +361,9 @@
     },
     "/members/{memberId}": {
       "get": {
+        "tags": [
+          "Members"
+        ],
         "operationId": "GetMemberById",
         "parameters": [
           {
@@ -388,6 +409,9 @@
         }
       },
       "patch": {
+        "tags": [
+          "Members"
+        ],
         "operationId": "UpdateMember",
         "parameters": [
           {
@@ -453,6 +477,9 @@
         }
       },
       "delete": {
+        "tags": [
+          "Members"
+        ],
         "operationId": "DeleteMember",
         "parameters": [
           {
@@ -510,6 +537,9 @@
     },
     "/login": {
       "post": {
+        "tags": [
+          "Login"
+        ],
         "operationId": "Login",
         "parameters": [],
         "requestBody": {
@@ -558,6 +588,9 @@
     },
     "/register": {
       "post": {
+        "tags": [
+          "Register"
+        ],
         "operationId": "Register",
         "parameters": [],
         "requestBody": {
@@ -606,6 +639,9 @@
     },
     "/checkout": {
       "post": {
+        "tags": [
+          "Checkout"
+        ],
         "operationId": "Checkout",
         "parameters": [],
         "requestBody": {

@@ -4,6 +4,7 @@ import { Book, Error } from "../../components/schemas";
 @endpoint({
   method: "POST",
   path: "/checkout",
+  tags: ["Checkout"],
 })
 class Checkout {
   @request

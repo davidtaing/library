@@ -11,6 +11,7 @@ import { Book, PartialBook, Error } from "../../components/schemas";
 @endpoint({
   method: "GET",
   path: "/books",
+  tags: ["Books"],
 })
 class GetBooks {
   @request
@@ -27,6 +28,7 @@ class GetBooks {
 @endpoint({
   method: "POST",
   path: "/books",
+  tags: ["Books"],
 })
 class AddBook {
   @request
@@ -45,6 +47,7 @@ class AddBook {
 @endpoint({
   method: "PATCH",
   path: "/books/:isbn10",
+  tags: ["Books"],
 })
 class UpdateBook {
   @request
@@ -66,6 +69,7 @@ class UpdateBook {
 @endpoint({
   method: "DELETE",
   path: "/books/:isbn10",
+  tags: ["Books"],
 })
 class DeleteBook {
   @request

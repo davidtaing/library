@@ -4,6 +4,7 @@ import { LoginRequest, Member, Error } from "../../components/schemas";
 @endpoint({
   method: "POST",
   path: "/login",
+  tags: ["Login"],
 })
 class Login {
   @request

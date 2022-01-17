@@ -4,6 +4,7 @@ import { Member, Error } from "../../components/schemas";
 @endpoint({
   method: "POST",
   path: "/register",
+  tags: ["Register"],
 })
 class Register {
   @request

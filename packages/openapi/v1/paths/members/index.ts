@@ -16,6 +16,7 @@ import {
 @endpoint({
   method: "GET",
   path: "/members",
+  tags: ["Members"],
 })
 class GetMembers {
   @request
@@ -34,6 +35,7 @@ class GetMembers {
 @endpoint({
   method: "POST",
   path: "/members",
+  tags: ["Members"],
 })
 class CreateMember {
   @request
@@ -52,6 +54,7 @@ class CreateMember {
 @endpoint({
   method: "GET",
   path: "/members/:memberId",
+  tags: ["Members"],
 })
 class GetMemberById {
   @request
@@ -70,6 +73,7 @@ class GetMemberById {
 @endpoint({
   method: "PATCH",
   path: "/members/:memberId",
+  tags: ["Members"],
 })
 class UpdateMember {
   @request
@@ -94,6 +98,7 @@ class UpdateMember {
 @endpoint({
   method: "DELETE",
   path: "/members/:memberId",
+  tags: ["Members"],
 })
 class DeleteMember {
   @request
