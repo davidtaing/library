@@ -1,27 +1,15 @@
-import { Request, Response, NextFunction } from "express";
 import { Operation } from "express-openapi";
 import { paths } from "../../openapi/spec";
+import MembersController from "../../controllers/members.controller";
 
 // GET /members/:memberId
-const GET: Operation = [
-  (req: Request, res: Response, next: NextFunction) => {
-    res.status(501).json();
-  },
-];
+const GET: Operation = [MembersController.getById];
 
 // PATCH /members/:memberId
-const PATCH: Operation = [
-  (req: Request, res: Response, next: NextFunction) => {
-    res.status(501).json();
-  },
-];
+const PATCH: Operation = [MembersController.patch];
 
 // DELETE /members/:memberId
-const DELETE: Operation = [
-  (req: Request, res: Response, next: NextFunction) => {
-    res.status(501).json();
-  },
-];
+const DELETE: Operation = [MembersController.delete];
 
 GET.apiDoc = paths["/members/{memberId}"]?.get;
 PATCH.apiDoc = paths["/members/{memberId}"]?.patch;
