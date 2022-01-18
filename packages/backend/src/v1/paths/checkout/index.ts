@@ -1,11 +1,9 @@
-import { Request, Response, NextFunction } from "express";
 import { Operation } from "express-openapi";
 import { paths } from "../../openapi/spec";
+import CheckoutController from "../../controllers/checkout.controller";
 
 // POST /checkout
-const POST: Operation = (req: Request, res: Response, next: NextFunction) => {
-  res.status(501).json("not yet implemented");
-};
+const POST: Operation = [CheckoutController.post];
 
 POST.apiDoc = paths["/checkout"]?.post;
 
