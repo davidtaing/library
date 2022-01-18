@@ -1,12 +1,12 @@
 import { Operation } from "express-openapi";
 import { paths } from "../../openapi/spec";
-import BooksController from "../../controllers/books.controllers";
+import { getBooks, postBook } from "../../controllers/books.controllers";
 
 // GET /books
-const GET: Operation = [BooksController.get];
+const GET: Operation = [getBooks];
 
 // POST /books
-const POST: Operation = [BooksController.post];
+const POST: Operation = [postBook];
 
 GET.apiDoc = paths["/books"]?.get;
 POST.apiDoc = paths["/books"]?.post;

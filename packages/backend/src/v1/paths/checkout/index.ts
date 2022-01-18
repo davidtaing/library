@@ -1,9 +1,9 @@
 import { Operation } from "express-openapi";
 import { paths } from "../../openapi/spec";
-import CheckoutController from "../../controllers/checkout.controller";
+import { checkout } from "../../controllers/checkout.controllers";
 
 // POST /checkout
-const POST: Operation = [CheckoutController.post];
+const POST: Operation = [checkout];
 
 POST.apiDoc = paths["/checkout"]?.post;
 

@@ -1,25 +1,25 @@
 import { Request, Response, NextFunction } from "express";
 
-class BooksController {
-  static async get(req: Request, res: Response, next: NextFunction) {
-    res.status(501).json();
-  }
+export const getBooks = (req: Request, res: Response, next: NextFunction) => {
+  res.status(501).json();
+};
 
-  static async getById(req: Request, res: Response, next: NextFunction) {
-    res.status(501).json();
-  }
+export const getBookById = (
+  req: Request,
+  res: Response,
+  next: NextFunction
+) => {
+  res.status(501).json();
+};
 
-  static async post(req: Request, res: Response, next: NextFunction) {
-    res.status(501).json();
-  }
+export const postBook = (req: Request, res: Response, next: NextFunction) => {
+  res.status(501).json();
+};
 
-  static async patch(req: Request, res: Response, next: NextFunction) {
-    res.status(501).json();
-  }
+export const patchBook = (req: Request, res: Response, next: NextFunction) => {
+  res.status(501).json();
+};
 
-  static async delete(req: Request, res: Response, next: NextFunction) {
-    res.status(501).json();
-  }
-}
-
-export default BooksController;
+export const deleteBook = (req: Request, res: Response, next: NextFunction) => {
+  res.status(501).json();
+};

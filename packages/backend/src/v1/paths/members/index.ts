@@ -1,12 +1,12 @@
 import { Operation } from "express-openapi";
 import { paths } from "../../openapi/spec";
-import MembersController from "../../controllers/members.controller";
+import { getMembers, postMember } from "../../controllers/members.controllers";
 
 // GET /members
-const GET: Operation = [MembersController.get];
+const GET: Operation = [getMembers];
 
 // POST /members
-const POST: Operation = [MembersController.post];
+const POST: Operation = [postMember];
 
 GET.apiDoc = paths["/members"]?.get;
 POST.apiDoc = paths["/members"]?.post;

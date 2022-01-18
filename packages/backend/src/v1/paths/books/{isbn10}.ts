@@ -1,15 +1,19 @@
 import { Operation } from "express-openapi";
 import { paths } from "../../openapi/spec";
-import BooksController from "../../controllers/books.controllers";
+import {
+  getBookById,
+  patchBook,
+  deleteBook,
+} from "../../controllers/books.controllers";
 
 // GET /books/:isbn10
-const GET: Operation = [BooksController.getById];
+const GET: Operation = [getBookById];
 
 // PATCH /books/:isbn10
-const PATCH: Operation = [BooksController.patch];
+const PATCH: Operation = [patchBook];
 
 // DELETE /books/:isbn10
-const DELETE: Operation = [BooksController.delete];
+const DELETE: Operation = [deleteBook];
 
 GET.apiDoc = paths["/books/{isbn10}"]?.get;
 PATCH.apiDoc = paths["/books/{isbn10}"]?.patch;
