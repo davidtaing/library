@@ -1,20 +1,12 @@
-import { Request, Response, NextFunction } from "express";
 import { Operation } from "express-openapi";
 import { paths } from "../../openapi/spec";
+import BooksController from "../../controllers/books.controllers";
 
 // GET /books
-const GET: Operation = [
-  (req: Request, res: Response, next: NextFunction) => {
-    res.status(501).json();
-  },
-];
+const GET: Operation = [BooksController.get];
 
 // POST /books
-const POST: Operation = [
-  (req: Request, res: Response, next: NextFunction) => {
-    res.status(501).json();
-  },
-];
+const POST: Operation = [BooksController.post];
 
 GET.apiDoc = paths["/books"]?.get;
 POST.apiDoc = paths["/books"]?.post;
