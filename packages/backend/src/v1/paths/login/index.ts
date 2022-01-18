@@ -1,13 +1,9 @@
-import { Request, Response, NextFunction } from "express";
 import { Operation } from "express-openapi";
 import { paths } from "../../openapi/spec";
+import { login } from "../../controllers/auth.controllers";
 
 // POST /login
-const POST: Operation = [
-  (req: Request, res: Response, next: NextFunction) => {
-    res.status(501).json();
-  },
-];
+const POST: Operation = [login];
 
 POST.apiDoc = paths["/login"]?.post;
 
