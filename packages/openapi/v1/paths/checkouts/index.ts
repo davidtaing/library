@@ -14,11 +14,11 @@ class Checkout {
   successResponse(@body body: Book[]) {}
 
   @response({ status: 400 })
-  BadRequestResponse(@body body: Error) {}
+  badRequestResponse(@body body: Error) {}
 
   @response({ status: 401 })
-  UnauthorizedResponse(@body body: Error) {}
+  unauthorizedResponse(@body body: Error) {}
 
   @response({ status: 500 })
-  InternalServerErrorResponse(@body body: Error) {}
+  internalServerErrorResponse(@body body: Error) {}
 }

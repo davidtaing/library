@@ -66,10 +66,10 @@ class GetMemberById {
   successResponse(@body body: Member) {}
 
   @response({ status: 400 })
-  BadRequestResponse(@body body: Error) {}
+  badRequestResponse(@body body: Error) {}
 
   @response({ status: 500 })
-  InternalServerErrorResponse(@body body: Error) {}
+  internalServerErrorResponse(@body body: Error) {}
 }
 
 @endpoint({
@@ -88,13 +88,13 @@ class UpdateMember {
   successResponse(@body body: Member) {}
 
   @response({ status: 400 })
-  BadRequestResponse(@body body: Error) {}
+  badRequestResponse(@body body: Error) {}
 
   @response({ status: 403 })
-  ForbiddenResponse(@body body: Error) {}
+  forbiddenResponse(@body body: Error) {}
 
   @response({ status: 500 })
-  InternalServerErrorResponse(@body body: Error) {}
+  internalServerErrorResponse(@body body: Error) {}
 }
 
 @endpoint({
@@ -110,11 +110,11 @@ class DeleteMember {
   successResponse(@body body: Member) {}
 
   @response({ status: 400 })
-  BadRequestResponse(@body body: Error) {}
+  badRequestResponse(@body body: Error) {}
 
   @response({ status: 403 })
-  ForbiddenResponse(@body body: Error) {}
+  forbiddenResponse(@body body: Error) {}
 
   @response({ status: 500 })
-  InternalServerErrorResponse(@body body: Error) {}
+  internalServerErrorResponse(@body body: Error) {}
 }

@@ -26,10 +26,12 @@ class GetBooks {
 
   @response({ status: 200 })
   successResponse(@body body: Book[]) {}
+
   @response({ status: 400 })
-  BadRequestResponse(@body body: Error) {}
+  badRequestResponse(@body body: Error) {}
+
   @response({ status: 500 })
-  InternalServerErrorResponse(@body body: Error) {}
+  internalServerErrorResponse(@body body: Error) {}
 }
 
 @endpoint({
@@ -43,12 +45,15 @@ class AddBook {
 
   @response({ status: 200 })
   successResponse(@body body: Book) {}
+
   @response({ status: 400 })
-  BadRequestResponse(@body body: Error) {}
+  badRequestResponse(@body body: Error) {}
+
   @response({ status: 403 })
-  ForbiddenResponse(@body body: Error) {}
+  forbiddenResponse(@body body: Error) {}
+
   @response({ status: 500 })
-  InternalServerErrorResponse(@body body: Error) {}
+  internalServerErrorResponse(@body body: Error) {}
 }
 
 @endpoint({
@@ -64,10 +69,10 @@ class GetBookById {
   successResponse(@body body: Book) {}
 
   @response({ status: 400 })
-  BadRequestResponse(@body body: Error) {}
+  badRequestResponse(@body body: Error) {}
 
   @response({ status: 500 })
-  InternalServerErrorResponse(@body body: Error) {}
+  internalServerErrorResponse(@body body: Error) {}
 }
 
 @endpoint({
@@ -86,13 +91,13 @@ class UpdateBook {
   successResponse(@body body: Book) {}
 
   @response({ status: 400 })
-  BadRequestResponse(@body body: Error) {}
+  badRequestResponse(@body body: Error) {}
 
   @response({ status: 403 })
-  ForbiddenResponse(@body body: Error) {}
+  forbiddenResponse(@body body: Error) {}
 
   @response({ status: 500 })
-  InternalServerErrorResponse(@body body: Error) {}
+  internalServerErrorResponse(@body body: Error) {}
 }
 
 @endpoint({
@@ -108,14 +113,14 @@ class DeleteBook {
   successResponse(@body body: Book) {}
 
   @response({ status: 400 })
-  BadRequestResponse(@body body: Error) {}
+  badRequestResponse(@body body: Error) {}
 
   @response({ status: 401 })
-  UnauthorizedResponse(@body body: Error) {}
+  unauthorizedResponse(@body body: Error) {}
 
   @response({ status: 403 })
-  ForbiddenResponse(@body body: Error) {}
+  forbiddenResponse(@body body: Error) {}
 
   @response({ status: 500 })
-  InternalServerErrorResponse(@body body: Error) {}
+  internalServerErrorResponse(@body body: Error) {}
 }
