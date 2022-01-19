@@ -6,7 +6,6 @@ import swaggerUi from "swagger-ui-express";
 import apiSpec from "./v1/openapi/spec";
 
 const app = express();
-const PORT = 3000;
 
 app.use(helmet());
 app.use(express.json());
@@ -31,6 +30,4 @@ app.use(
   })
 );
 
-app.listen(3000, () => {
-  console.log(`Express Server Listening on ${PORT}`);
-});
+export default app;
