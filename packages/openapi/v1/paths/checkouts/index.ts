@@ -3,7 +3,7 @@ import { Book, Error } from "../../components/schemas";
 
 @endpoint({
   method: "POST",
-  path: "/checkout",
+  path: "/checkouts",
   tags: ["Checkout"],
 })
 class Checkout {

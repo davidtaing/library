@@ -2,7 +2,7 @@ import { api } from "@airtasker/spot";
 
 import "./paths/books";
 import "./paths/members";
-import "./paths/checkout";
+import "./paths/checkouts";
 
 @api({
   name: "Simple Library",
