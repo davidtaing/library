@@ -9,7 +9,6 @@ export interface Book {
   publisher: String;
   category: String;
   quantityAvailable: Number;
-  borrowers: String[];
 }
 
 // @airtasker/spot does not support Partial<T>
@@ -22,5 +21,4 @@ export interface PartialBook {
   publisher?: String;
   category?: String;
   quantityAvailable?: Number;
-  borrowers?: String[];
 }

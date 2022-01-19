@@ -12,7 +12,6 @@ export const BookSchema = new Schema<BookDocument>({
   publisher: { type: String, required: true },
   category: { type: String, required: true },
   quantityAvailable: { type: Number, required: true },
-  borrowers: [{ type: Types.ObjectId, ref: "Member" }],
 });
 
 const BookModel = model("Book", BookSchema);

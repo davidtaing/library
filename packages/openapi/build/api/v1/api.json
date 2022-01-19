@@ -76,19 +76,6 @@
               "type": "number",
               "format": "float"
             }
-          },
-          {
-            "name": "borrowers",
-            "in": "query",
-            "style": "form",
-            "explode": true,
-            "required": false,
-            "schema": {
-              "type": "array",
-              "items": {
-                "type": "string"
-              }
-            }
           }
         ],
         "responses": {
@@ -804,12 +791,6 @@
           "quantityAvailable": {
             "type": "number",
             "format": "float"
-          },
-          "borrowers": {
-            "type": "array",
-            "items": {
-              "type": "string"
-            }
           }
         },
         "required": [
@@ -820,8 +801,7 @@
           "author",
           "publisher",
           "category",
-          "quantityAvailable",
-          "borrowers"
+          "quantityAvailable"
         ]
       },
       "Error": {
@@ -865,12 +845,6 @@
           "quantityAvailable": {
             "type": "number",
             "format": "float"
-          },
-          "borrowers": {
-            "type": "array",
-            "items": {
-              "type": "string"
-            }
           }
         }
       },
