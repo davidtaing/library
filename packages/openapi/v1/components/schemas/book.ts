@@ -23,3 +23,13 @@ export interface PartialBook {
   category?: String;
   quantityAvailable?: Number;
 }
+
+export interface BookFilterOpts {
+  isbn10?: String;
+  isbn13?: String;
+  title?: String;
+  subtitle?: String;
+  author?: String;
+  publisher?: String;
+  category?: String;
+}

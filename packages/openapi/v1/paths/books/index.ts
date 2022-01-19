@@ -7,7 +7,12 @@ import {
   queryParams,
   String,
 } from "@airtasker/spot";
-import { Book, PartialBook, Error } from "../../components/schemas";
+import {
+  Book,
+  PartialBook,
+  BookFilterOpts,
+  Error,
+} from "../../components/schemas";
 
 @endpoint({
   method: "GET",
@@ -114,6 +119,6 @@ class DeleteBook {
   InternalServerErrorResponse(@body body: Error) {}
 }
 
-type GetBooksRequest = PartialBook;
+type GetBooksRequest = BookFilterOpts;
 type AddBookRequest = Book;
 type UpdateBookRequest = PartialBook;

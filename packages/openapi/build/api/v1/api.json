@@ -67,15 +67,6 @@
             "schema": {
               "type": "string"
             }
-          },
-          {
-            "name": "quantityAvailable",
-            "in": "query",
-            "required": false,
-            "schema": {
-              "type": "number",
-              "format": "float"
-            }
           }
         ],
         "responses": {
