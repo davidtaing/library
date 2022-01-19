@@ -1,13 +1,13 @@
 import { Operation } from "express-openapi";
 import { paths } from "../../openapi/spec";
 import {
-  getBookById,
+  getBookByIsbn,
   patchBook,
   deleteBook,
 } from "../../controllers/books.controllers";
 
 // GET /books/:isbn10
-const GET: Operation = [getBookById];
+const GET: Operation = [getBookByIsbn];
 
 // PATCH /books/:isbn10
 const PATCH: Operation = [patchBook];

@@ -2,8 +2,8 @@ import { model, Schema, Types } from "mongoose";
 import { Book } from "../../../../openapi/v1/components/schemas";
 
 export const BookSchema = new Schema<Book>({
-  isbn10: { type: String, required: true },
-  isbn13: { type: String, required: true },
+  isbn10: { type: String, required: true, unique: true, index: true },
+  isbn13: { type: String, required: true, unique: true },
   title: { type: String, required: true },
   subtitle: { type: String, required: true },
   author: { type: String, required: true },
