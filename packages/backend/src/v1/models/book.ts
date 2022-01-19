@@ -1,7 +1,8 @@
 import { model, Schema, Types } from "mongoose";
 import { Book } from "../../../../openapi/v1/components/schemas";
 
-export interface BookDocument extends Book {}
+// remove @airtasker/spot _id: string field.
+export interface BookDocument extends Omit<Book, "_id"> {}
 
 export const BookSchema = new Schema<BookDocument>({
   isbn10: { type: String, required: true, unique: true, index: true },

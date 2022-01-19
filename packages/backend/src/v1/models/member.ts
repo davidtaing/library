@@ -1,12 +1,10 @@
 import { Member } from "../../../../openapi/v1/components/schemas";
-import { Types, Schema, model } from "mongoose";
+import { Schema, model } from "mongoose";
 
-export interface MemberDocument extends Omit<Member, "_id"> {
-  _id: Types.ObjectId;
-}
+// remove @airtasker/spot _id: string field.
+export interface MemberDocument extends Omit<Member, "_id"> {}
 
 export const MemberSchema = new Schema<MemberDocument>({
-  _id: Types.ObjectId,
   email: { type: String, required: true },
   password: { type: String, required: true },
   fullName: { type: String, required: true },

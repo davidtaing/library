@@ -3,9 +3,9 @@ import { Checkout } from "../../../../openapi/v1/components/schemas";
 import { MemberDocument } from "./member";
 import { BookDocument } from "./book";
 
-// convert @airtasker/spot date to string and string to objectId
+// convert @airtasker/spot types to mongoose schema types and remove _id
 interface CheckoutDocument
-  extends Omit<Checkout, "date" | "dueDate" | "member" | "books"> {
+  extends Omit<Checkout, "_id" | "date" | "dueDate" | "member" | "books"> {
   date: Date;
   dueDate: Date;
   member: MemberDocument;

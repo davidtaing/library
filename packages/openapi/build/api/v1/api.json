@@ -368,14 +368,6 @@
         "operationId": "GetMembers",
         "parameters": [
           {
-            "name": "_id",
-            "in": "query",
-            "required": true,
-            "schema": {
-              "type": "string"
-            }
-          },
-          {
             "name": "email",
             "in": "query",
             "required": false,
@@ -767,6 +759,9 @@
       "Book": {
         "type": "object",
         "properties": {
+          "_id": {
+            "type": "string"
+          },
           "isbn10": {
             "type": "string"
           },
@@ -794,6 +789,7 @@
           }
         },
         "required": [
+          "_id",
           "isbn10",
           "isbn13",
           "title",
@@ -963,9 +959,6 @@
       "PartialMember": {
         "type": "object",
         "properties": {
-          "_id": {
-            "type": "string"
-          },
           "email": {
             "type": "string"
           },
@@ -998,10 +991,7 @@
               }
             }
           }
-        },
-        "required": [
-          "_id"
-        ]
+        }
       },
       "UpdateMemberRequest": {
         "$ref": "#/components/schemas/PartialMember"
