@@ -803,7 +803,44 @@
         ]
       },
       "AddBookRequest": {
-        "$ref": "#/components/schemas/Book"
+        "type": "object",
+        "properties": {
+          "isbn10": {
+            "type": "string"
+          },
+          "isbn13": {
+            "type": "string"
+          },
+          "title": {
+            "type": "string"
+          },
+          "subtitle": {
+            "type": "string"
+          },
+          "author": {
+            "type": "string"
+          },
+          "publisher": {
+            "type": "string"
+          },
+          "category": {
+            "type": "string"
+          },
+          "quantityAvailable": {
+            "type": "number",
+            "format": "float"
+          }
+        },
+        "required": [
+          "isbn10",
+          "isbn13",
+          "title",
+          "subtitle",
+          "author",
+          "publisher",
+          "category",
+          "quantityAvailable"
+        ]
       },
       "PartialBook": {
         "type": "object",

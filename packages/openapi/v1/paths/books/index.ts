@@ -12,6 +12,7 @@ import {
   PartialBook,
   BookFilterOpts,
   Error,
+  AddBookRequest,
 } from "../../components/schemas";
 
 @endpoint({
@@ -120,5 +121,4 @@ class DeleteBook {
 }
 
 type GetBooksRequest = BookFilterOpts;
-type AddBookRequest = Book;
 type UpdateBookRequest = PartialBook;

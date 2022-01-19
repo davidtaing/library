@@ -1,11 +1,12 @@
 import { Error } from "./error";
-import { Book, PartialBook, BookFilterOpts } from "./book";
+import { Book, AddBookRequest, PartialBook, BookFilterOpts } from "./book";
 import { Member, PartialMember, PostMember } from "./member";
 import { Checkout } from "./checkout";
 
 export type {
   Error,
   Book,
+  AddBookRequest,
   PartialBook,
   BookFilterOpts,
   Member,
