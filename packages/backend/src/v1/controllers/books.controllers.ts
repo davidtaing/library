@@ -15,14 +15,14 @@ export const getBooks = async (
   }
 };
 
-export const getBookByIsbn = async (
+export const getBookById = async (
   req: Request,
   res: Response,
   next: NextFunction
 ) => {
   try {
-    const isbn10 = req.params.isbn10;
-    const result = await BookModel.findOne({ isbn10 });
+    const _id = req.params._id;
+    const result = await BookModel.findOne({ _id });
     res.status(200).json(result);
   } catch (err) {
     next(err);
@@ -50,8 +50,8 @@ export const patchBook = async (
 ) => {
   try {
     const payload = req.body;
-    const isbn10 = req.params.isbn10;
-    const result = await BookModel.updateOne({ isbn10 }, payload);
+    const _id = req.params._id;
+    const result = await BookModel.updateOne({ _id }, payload);
     res.status(200).json(result);
   } catch (err) {
     next(err);
@@ -64,8 +64,8 @@ export const deleteBook = async (
   next: NextFunction
 ) => {
   try {
-    const isbn10 = req.params.isbn10;
-    const result = await BookModel.deleteOne({ isbn10 });
+    const _id = req.params._id;
+    const result = await BookModel.deleteOne({ _id });
     res.status(200).json(result);
   } catch (err) {
     next(err);

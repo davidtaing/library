@@ -1,23 +1,23 @@
 import { Operation } from "express-openapi";
 import { paths } from "../../openapi/spec";
 import {
-  getBookByIsbn,
+  getBookById,
   patchBook,
   deleteBook,
 } from "../../controllers/books.controllers";
 
-// GET /books/:isbn10
-const GET: Operation = [getBookByIsbn];
+// GET /books/:bookId
+const GET: Operation = [getBookById];
 
-// PATCH /books/:isbn10
+// PATCH /books/:bookId
 const PATCH: Operation = [patchBook];
 
-// DELETE /books/:isbn10
+// DELETE /books/:bookId
 const DELETE: Operation = [deleteBook];
 
-GET.apiDoc = paths["/books/{isbn10}"]?.get;
-PATCH.apiDoc = paths["/books/{isbn10}"]?.patch;
-DELETE.apiDoc = paths["/books/{isbn10}"]?.delete;
+GET.apiDoc = paths["/books/{bookId}"]?.get;
+PATCH.apiDoc = paths["/books/{bookId}"]?.patch;
+DELETE.apiDoc = paths["/books/{bookId}"]?.delete;
 
 const operations = () => ({ GET, PATCH, DELETE });
 

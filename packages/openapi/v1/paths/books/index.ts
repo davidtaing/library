@@ -47,12 +47,12 @@ class AddBook {
 
 @endpoint({
   method: "GET",
-  path: "/books/:isbn10",
+  path: "/books/:bookId",
   tags: ["Books"],
 })
-class GetBookByIsbn {
+class GetBookById {
   @request
-  request(@pathParams pathParams: { isbn10: String }) {}
+  request(@pathParams pathParams: { bookId: String }) {}
 
   @response({ status: 200 })
   successResponse(@body body: Book) {}
@@ -66,13 +66,13 @@ class GetBookByIsbn {
 
 @endpoint({
   method: "PATCH",
-  path: "/books/:isbn10",
+  path: "/books/:bookId",
   tags: ["Books"],
 })
 class UpdateBook {
   @request
   request(
-    @pathParams pathParams: { isbn10: String },
+    @pathParams pathParams: { bookId: String },
     @body body: UpdateBookRequest
   ) {}
 
@@ -91,12 +91,12 @@ class UpdateBook {
 
 @endpoint({
   method: "DELETE",
-  path: "/books/:isbn10",
+  path: "/books/:bookId",
   tags: ["Books"],
 })
 class DeleteBook {
   @request
-  request(@pathParams pathParams: { isbn10: String }) {}
+  request(@pathParams pathParams: { bookId: String }) {}
 
   @response({ status: 200 })
   successResponse(@body body: Book) {}
