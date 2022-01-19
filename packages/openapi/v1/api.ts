@@ -2,8 +2,6 @@ import { api } from "@airtasker/spot";
 
 import "./paths/books";
 import "./paths/members";
-import "./paths/login";
-import "./paths/register";
 import "./paths/checkout";
 
 @api({

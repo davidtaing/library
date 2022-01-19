@@ -710,108 +710,6 @@
         }
       }
     },
-    "/login": {
-      "post": {
-        "tags": [
-          "Login"
-        ],
-        "operationId": "Login",
-        "parameters": [],
-        "requestBody": {
-          "content": {
-            "application/json": {
-              "schema": {
-                "$ref": "#/components/schemas/LoginRequest"
-              }
-            }
-          },
-          "required": true
-        },
-        "responses": {
-          "200": {
-            "description": "200 response",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/Member"
-                }
-              }
-            }
-          },
-          "401": {
-            "description": "401 response",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/Error"
-                }
-              }
-            }
-          },
-          "500": {
-            "description": "500 response",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/Error"
-                }
-              }
-            }
-          }
-        }
-      }
-    },
-    "/register": {
-      "post": {
-        "tags": [
-          "Register"
-        ],
-        "operationId": "Register",
-        "parameters": [],
-        "requestBody": {
-          "content": {
-            "application/json": {
-              "schema": {
-                "$ref": "#/components/schemas/RegisterRequest"
-              }
-            }
-          },
-          "required": true
-        },
-        "responses": {
-          "200": {
-            "description": "200 response",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/Member"
-                }
-              }
-            }
-          },
-          "400": {
-            "description": "400 response",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/Error"
-                }
-              }
-            }
-          },
-          "500": {
-            "description": "500 response",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/Error"
-                }
-              }
-            }
-          }
-        }
-      }
-    },
     "/checkout": {
       "post": {
         "tags": [
@@ -1133,24 +1031,6 @@
       },
       "UpdateMemberRequest": {
         "$ref": "#/components/schemas/PartialMember"
-      },
-      "LoginRequest": {
-        "type": "object",
-        "properties": {
-          "email": {
-            "type": "string"
-          },
-          "password": {
-            "type": "string"
-          }
-        },
-        "required": [
-          "email",
-          "password"
-        ]
-      },
-      "RegisterRequest": {
-        "$ref": "#/components/schemas/Member"
       },
       "CheckoutRequest": {
         "type": "object",
