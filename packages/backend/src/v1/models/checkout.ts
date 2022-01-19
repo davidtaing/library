@@ -22,4 +22,4 @@ const CheckoutSchema = new Schema<Checkout>({
 
 const CheckoutModel = model("Checkout", CheckoutSchema);
 
-export default CheckoutDocument;
+export default CheckoutModel;
