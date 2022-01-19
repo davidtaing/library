@@ -16,7 +16,7 @@ const CheckoutSchema = new Schema<CheckoutDocument>({
   date: Date,
   dueDate: Date,
   member: {
-    type: Schema.Types.ObjectId,
+    type: Schema.Types.String,
     ref: "Member",
   },
   books: [{ type: Schema.Types.ObjectId, ref: "Book" }],
