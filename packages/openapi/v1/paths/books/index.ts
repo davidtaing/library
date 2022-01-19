@@ -4,6 +4,7 @@ import {
   response,
   body,
   pathParams,
+  queryParams,
   String,
 } from "@airtasker/spot";
 import { Book, PartialBook, Error } from "../../components/schemas";
@@ -15,7 +16,7 @@ import { Book, PartialBook, Error } from "../../components/schemas";
 })
 class GetBooks {
   @request
-  request(@body body: GetBooksRequest) {}
+  request(@queryParams queryParams: GetBooksRequest) {}
 
   @response({ status: 200 })
   successResponse(@body body: Book[]) {}

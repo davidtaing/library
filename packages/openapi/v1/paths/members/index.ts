@@ -4,6 +4,7 @@ import {
   response,
   body,
   pathParams,
+  queryParams,
   String,
 } from "@airtasker/spot";
 import {
@@ -20,7 +21,7 @@ import {
 })
 class GetMembers {
   @request
-  request(@body body: GetMembersRequest) {}
+  request(@queryParams queryParams: GetMembersRequest) {}
 
   @response({ status: 200 })
   successResponse(@body body: Member[]) {}

@@ -11,17 +11,86 @@
           "Books"
         ],
         "operationId": "GetBooks",
-        "parameters": [],
-        "requestBody": {
-          "content": {
-            "application/json": {
-              "schema": {
-                "$ref": "#/components/schemas/GetBooksRequest"
-              }
+        "parameters": [
+          {
+            "name": "isbn10",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "string"
             }
           },
-          "required": true
-        },
+          {
+            "name": "isbn13",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "title",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "subtitle",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "author",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "publisher",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "category",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "quantityAvailable",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "number",
+              "format": "float"
+            }
+          },
+          {
+            "name": "borrowers",
+            "in": "query",
+            "style": "form",
+            "explode": true,
+            "required": false,
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string"
+              }
+            }
+          }
+        ],
         "responses": {
           "200": {
             "description": "200 response",
@@ -310,17 +379,75 @@
           "Members"
         ],
         "operationId": "GetMembers",
-        "parameters": [],
-        "requestBody": {
-          "content": {
-            "application/json": {
-              "schema": {
-                "$ref": "#/components/schemas/GetMembersRequest"
-              }
+        "parameters": [
+          {
+            "name": "_id",
+            "in": "query",
+            "required": true,
+            "schema": {
+              "type": "string"
             }
           },
-          "required": true
-        },
+          {
+            "name": "email",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "password",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "fullName",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "preferredName",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "address",
+            "in": "query",
+            "style": "deepObject",
+            "explode": true,
+            "required": false,
+            "schema": {
+              "type": "object",
+              "properties": {
+                "addressLn1": {
+                  "type": "string"
+                },
+                "addressLn2": {
+                  "type": "string"
+                },
+                "suburb": {
+                  "type": "string"
+                },
+                "state": {
+                  "type": "string"
+                },
+                "postcode": {
+                  "type": "string"
+                }
+              }
+            }
+          }
+        ],
         "responses": {
           "200": {
             "description": "200 response",
@@ -752,45 +879,6 @@
   },
   "components": {
     "schemas": {
-      "PartialBook": {
-        "type": "object",
-        "properties": {
-          "isbn10": {
-            "type": "string"
-          },
-          "isbn13": {
-            "type": "string"
-          },
-          "title": {
-            "type": "string"
-          },
-          "subtitle": {
-            "type": "string"
-          },
-          "author": {
-            "type": "string"
-          },
-          "publisher": {
-            "type": "string"
-          },
-          "category": {
-            "type": "string"
-          },
-          "quantityAvailable": {
-            "type": "number",
-            "format": "float"
-          },
-          "borrowers": {
-            "type": "array",
-            "items": {
-              "type": "string"
-            }
-          }
-        }
-      },
-      "GetBooksRequest": {
-        "$ref": "#/components/schemas/PartialBook"
-      },
       "Book": {
         "type": "object",
         "properties": {
@@ -852,54 +940,44 @@
       "AddBookRequest": {
         "$ref": "#/components/schemas/Book"
       },
-      "UpdateBookRequest": {
-        "$ref": "#/components/schemas/PartialBook"
-      },
-      "PartialMember": {
+      "PartialBook": {
         "type": "object",
         "properties": {
-          "_id": {
+          "isbn10": {
             "type": "string"
           },
-          "email": {
+          "isbn13": {
             "type": "string"
           },
-          "password": {
+          "title": {
             "type": "string"
           },
-          "fullName": {
+          "subtitle": {
             "type": "string"
           },
-          "preferredName": {
+          "author": {
             "type": "string"
           },
-          "address": {
-            "type": "object",
-            "properties": {
-              "addressLn1": {
-                "type": "string"
-              },
-              "addressLn2": {
-                "type": "string"
-              },
-              "suburb": {
-                "type": "string"
-              },
-              "state": {
-                "type": "string"
-              },
-              "postcode": {
-                "type": "string"
-              }
+          "publisher": {
+            "type": "string"
+          },
+          "category": {
+            "type": "string"
+          },
+          "quantityAvailable": {
+            "type": "number",
+            "format": "float"
+          },
+          "borrowers": {
+            "type": "array",
+            "items": {
+              "type": "string"
             }
           }
-        },
-        "required": [
-          "_id"
-        ]
+        }
       },
-      "GetMembersRequest": {
-        "$ref": "#/components/schemas/PartialMember"
+      "UpdateBookRequest": {
+        "$ref": "#/components/schemas/PartialBook"
       },
       "Member": {
         "type": "object",
@@ -1009,6 +1087,49 @@
       },
       "CreateMemberRequest": {
         "$ref": "#/components/schemas/PostMember"
+      },
+      "PartialMember": {
+        "type": "object",
+        "properties": {
+          "_id": {
+            "type": "string"
+          },
+          "email": {
+            "type": "string"
+          },
+          "password": {
+            "type": "string"
+          },
+          "fullName": {
+            "type": "string"
+          },
+          "preferredName": {
+            "type": "string"
+          },
+          "address": {
+            "type": "object",
+            "properties": {
+              "addressLn1": {
+                "type": "string"
+              },
+              "addressLn2": {
+                "type": "string"
+              },
+              "suburb": {
+                "type": "string"
+              },
+              "state": {
+                "type": "string"
+              },
+              "postcode": {
+                "type": "string"
+              }
+            }
+          }
+        },
+        "required": [
+          "_id"
+        ]
       },
       "UpdateMemberRequest": {
         "$ref": "#/components/schemas/PartialMember"

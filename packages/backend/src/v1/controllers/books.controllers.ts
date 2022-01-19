@@ -7,7 +7,8 @@ export const getBooks = async (
   next: NextFunction
 ) => {
   try {
-    const result = await BookModel.find();
+    const filter = req.query;
+    const result = await BookModel.find(filter);
     res.status(200).json(result);
   } catch (err) {
     next(err);
