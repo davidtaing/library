@@ -15,7 +15,8 @@ export interface Member {
   };
 }
 
-export interface PostMember {
+// @airtasker/spot does not support Partial<T> or Omit<T>
+export interface CreateMemberRequest {
   email: String;
   password: String;
   fullName: String;
@@ -29,7 +30,6 @@ export interface PostMember {
   };
 }
 
-// @airtasker/spot does not support Partial<T> or Omit<T>
 export interface PartialMember {
   email?: String;
   password?: String;
@@ -43,3 +43,6 @@ export interface PartialMember {
     postcode?: String;
   };
 }
+
+export type UpdateMemberRequest = PartialMember;
+export type GetMembersRequestFilters = PartialMember;

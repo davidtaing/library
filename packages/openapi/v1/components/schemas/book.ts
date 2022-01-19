@@ -24,7 +24,7 @@ export interface AddBookRequest {
   quantityAvailable: Number;
 }
 
-export interface PartialBook {
+export interface UpdateBookRequest {
   isbn10?: String;
   isbn13?: String;
   title?: String;
@@ -35,7 +35,7 @@ export interface PartialBook {
   quantityAvailable?: Number;
 }
 
-export interface BookFilterOpts {
+export interface GetBooksRequestFilters {
   isbn10?: String;
   isbn13?: String;
   title?: String;

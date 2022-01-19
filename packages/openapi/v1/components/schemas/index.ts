@@ -1,16 +1,28 @@
 import { Error } from "./error";
-import { Book, AddBookRequest, PartialBook, BookFilterOpts } from "./book";
-import { Member, PartialMember, PostMember } from "./member";
-import { Checkout } from "./checkout";
+import {
+  Book,
+  AddBookRequest,
+  UpdateBookRequest,
+  GetBooksRequestFilters,
+} from "./book";
+import {
+  Member,
+  GetMembersRequestFilters,
+  CreateMemberRequest,
+  UpdateMemberRequest,
+} from "./member";
+import { Checkout, CheckoutRequest } from "./checkout";
 
 export type {
   Error,
   Book,
   AddBookRequest,
-  PartialBook,
-  BookFilterOpts,
+  UpdateBookRequest,
+  GetBooksRequestFilters,
   Member,
-  PartialMember,
-  PostMember,
+  GetMembersRequestFilters,
+  CreateMemberRequest,
+  UpdateMemberRequest,
   Checkout,
+  CheckoutRequest,
 };

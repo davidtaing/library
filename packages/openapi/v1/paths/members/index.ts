@@ -9,8 +9,9 @@ import {
 } from "@airtasker/spot";
 import {
   Member,
-  PartialMember,
-  PostMember,
+  CreateMemberRequest,
+  UpdateMemberRequest,
+  GetMembersRequestFilters,
   Error,
 } from "../../components/schemas";
 
@@ -21,7 +22,7 @@ import {
 })
 class GetMembers {
   @request
-  request(@queryParams queryParams: GetMembersRequest) {}
+  request(@queryParams queryParams: GetMembersRequestFilters) {}
 
   @response({ status: 200 })
   successResponse(@body body: Member[]) {}
@@ -117,7 +118,3 @@ class DeleteMember {
   @response({ status: 500 })
   InternalServerErrorResponse(@body body: Error) {}
 }
-
-type GetMembersRequest = PartialMember;
-type CreateMemberRequest = PostMember;
-type UpdateMemberRequest = PartialMember;

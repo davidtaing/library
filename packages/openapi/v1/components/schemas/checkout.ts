@@ -11,3 +11,8 @@ export interface Checkout {
   };
   books: Book[];
 }
+
+export interface CheckoutRequest {
+  memberId: String;
+  bookIds: String[];
+}

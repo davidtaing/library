@@ -1,5 +1,5 @@
 import { endpoint, request, response, body, String } from "@airtasker/spot";
-import { Book, Error } from "../../components/schemas";
+import { Book, Error, CheckoutRequest } from "../../components/schemas";
 
 @endpoint({
   method: "POST",
@@ -22,5 +22,3 @@ class Checkout {
   @response({ status: 500 })
   InternalServerErrorResponse(@body body: Error) {}
 }
-
-type CheckoutRequest = { memberId: String; bookIds: String[] };

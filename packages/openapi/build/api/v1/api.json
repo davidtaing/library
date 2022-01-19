@@ -842,7 +842,7 @@
           "quantityAvailable"
         ]
       },
-      "PartialBook": {
+      "UpdateBookRequest": {
         "type": "object",
         "properties": {
           "isbn10": {
@@ -871,9 +871,6 @@
             "format": "float"
           }
         }
-      },
-      "UpdateBookRequest": {
-        "$ref": "#/components/schemas/PartialBook"
       },
       "Member": {
         "type": "object",
@@ -930,7 +927,7 @@
           "address"
         ]
       },
-      "PostMember": {
+      "CreateMemberRequest": {
         "type": "object",
         "properties": {
           "email": {
@@ -980,9 +977,6 @@
           "preferredName",
           "address"
         ]
-      },
-      "CreateMemberRequest": {
-        "$ref": "#/components/schemas/PostMember"
       },
       "PartialMember": {
         "type": "object",

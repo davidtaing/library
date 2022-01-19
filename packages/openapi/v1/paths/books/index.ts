@@ -9,8 +9,8 @@ import {
 } from "@airtasker/spot";
 import {
   Book,
-  PartialBook,
-  BookFilterOpts,
+  UpdateBookRequest,
+  GetBooksRequestFilters,
   Error,
   AddBookRequest,
 } from "../../components/schemas";
@@ -22,7 +22,7 @@ import {
 })
 class GetBooks {
   @request
-  request(@queryParams queryParams: GetBooksRequest) {}
+  request(@queryParams queryParams: GetBooksRequestFilters) {}
 
   @response({ status: 200 })
   successResponse(@body body: Book[]) {}
@@ -119,6 +119,3 @@ class DeleteBook {
   @response({ status: 500 })
   InternalServerErrorResponse(@body body: Error) {}
 }
-
-type GetBooksRequest = BookFilterOpts;
-type UpdateBookRequest = PartialBook;
