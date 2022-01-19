@@ -187,15 +187,15 @@
         }
       }
     },
-    "/books/{isbn10}": {
+    "/books/{bookId}": {
       "get": {
         "tags": [
           "Books"
         ],
-        "operationId": "GetBookByIsbn",
+        "operationId": "GetBookById",
         "parameters": [
           {
-            "name": "isbn10",
+            "name": "bookId",
             "in": "path",
             "required": true,
             "schema": {
@@ -243,7 +243,7 @@
         "operationId": "UpdateBook",
         "parameters": [
           {
-            "name": "isbn10",
+            "name": "bookId",
             "in": "path",
             "required": true,
             "schema": {
@@ -311,7 +311,7 @@
         "operationId": "DeleteBook",
         "parameters": [
           {
-            "name": "isbn10",
+            "name": "bookId",
             "in": "path",
             "required": true,
             "schema": {
