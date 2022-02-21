@@ -25,7 +25,7 @@ app.use(
   swaggerUi.serve,
   swaggerUi.setup(undefined, {
     swaggerOptions: {
-      url: "http://localhost:3000/api-docs",
+      url: "http://localhost:4000/api-docs",
     },
   })
 );
